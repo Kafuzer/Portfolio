@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="A propos | Enzo Zoughebi" description="About Enzo Zoughebi">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="A propos"
+				tagline="Merci de votre visite. Lisez ci-dessous pour en savoir plus sur moi et mon parcours."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/zouzpresportrait.jpg"
+					alt="Zouz bg pendant une présentation"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						Originaire du sud de la France, je suis un jeune récement diplômé de Master II en Innovation et management.
+						Passionné d'entrepreneuriat et de gestion de projet depuis plusieurs années, je suis engagé dans la création et le développement d'entreprises. 
+						Cette immersion dans le monde entrepreneurial a non seulement forgé ma compréhension des mécanismes complexes du marché, mais elle a également cultivé des compétences cruciales en matière de gestion de projet. 
+						Ma capacité à élaborer des stratégies claires, à fixer des objectifs mesurables et à diriger des équipes vers le succès s'est affinée au fil des années. 
+						L'entrepreneuriat m'a enseigné la résilience face aux défis, la créativité dans la résolution de problèmes et la persévérance pour atteindre les objectifs ambitieux. 
+						Ces compétences, combinées à ma passion pour l'innovation et la croissance, constituent le socle de mon identité entrepreneuriale, guidant mes actions quotidiennes et ma vision à long terme.
+					</p>
+					<br/>
+					<p>
+						Enthousiaste des sports de combat depuis plus d'une décennie, je suis un fervent pratiquant de la boxe, du MMA (Mixed Martial Arts) et du Jiu-Jitsu brésilien. 
+						Cette passion profonde a façonné ma vie de manière significative, apportant une richesse d'avantages tant sur le plan physique que mental.
+						Cette longue expérience a non seulement sculpté mon corps en améliorant ma condition physique, mais elle a également apporté des bienfaits significatifs à mon bien-être mental. 
+						La discipline exigée par ces disciplines a renforcé ma concentration, ma maîtrise de soi et ma gestion du stress, des compétences qui se traduisent positivement dans tous les aspects de ma vie. 
+						Au-delà des avantages physiques, la pratique des sports de combat a cultivé des valeurs essentielles telles que la persévérance, le respect et l'esprit d'équipe, contribuant ainsi à ma croissance personnelle. 
+						Cette passion demeure un pilier central de mon identité, guidant mes choix et inspirant ma vie au quotidien.
+					</p>
+
+					<br/>
+
+<img src="/public/assets/zouzbandes.jpg"> <img src="/public/assets/zouzboxe.PNG">
+
+<br/>
+<br/>
+
+
+					<br/>
+
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p>Titulaire d'un Master II en Management et Innovation à l'IAE Paris-Est</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
